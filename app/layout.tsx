@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -10,6 +11,33 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
+
+const boldonse = localFont({
+  src: "../fonts/Boldonse/Boldonse-Regular.ttf",
+  variable: "--font-boldonse",
+  weight: "400",
+  display: "swap",
+});
+
+const italiana = localFont({
+  src: "../fonts/Italiana/Italiana-Regular.ttf",
+  variable: "--font-italiana",
+  weight: "400",
+  display: "swap",
+});
+
+const michroma = localFont({
+  src: "../fonts/Michroma/Michroma-Regular.ttf",
+  variable: "--font-michroma",
+  weight: "400",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -25,7 +53,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} ${boldonse.variable} ${italiana.variable} ${michroma.variable} antialiased`}
       >
         {children}
       </body>
