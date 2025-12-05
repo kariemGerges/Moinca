@@ -40,10 +40,12 @@ export default function PortfolioSection({
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           {portfolioItems.map((item, index) => (
-            <div
+            <article
               key={item.id}
               ref={setSectionRef(`work-item-${item.id}`)}
               data-section-id={`work-item-${item.id}`}
+              itemScope
+              itemType="https://schema.org/CreativeWork"
               className={`group relative overflow-hidden border border-white/10 hover:border-white/30 transition-all duration-700 cursor-pointer ${
                 isVisible[`work-item-${item.id}`] 
                   ? "opacity-100 translate-y-0 scale-100" 
@@ -59,6 +61,9 @@ export default function PortfolioSection({
                 e.currentTarget.style.transform = "";
               }}
             >
+              <meta itemProp="name" content={item.title} />
+              <meta itemProp="description" content={item.description} />
+              <meta itemProp="genre" content={item.category} />
               <div className="absolute inset-0 bg-gradient-to-br from-white/0 to-white/0 group-hover:from-white/5 group-hover:to-white/0 transition-all duration-500" />
               <div className="p-8 sm:p-12 min-h-[400px] flex flex-col justify-between relative z-10">
                 <div className="relative z-10">
@@ -92,7 +97,7 @@ export default function PortfolioSection({
                   </div>
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>

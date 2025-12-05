@@ -7,6 +7,7 @@ import MojoSection from "./components/MojoSection";
 import AboutSection from "./components/AboutSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
+import SEOStructuredData from "./components/SEOStructuredData";
 import { PortfolioItem } from "./components/types";
 
 export default function Home() {
@@ -79,9 +80,11 @@ export default function Home() {
   ];
 
   return (
-    <div className="relative min-h-screen bg-[#0D0D0D] overflow-hidden">
-      <main className="relative z-10">
-        <HeroSection scrollY={scrollY} />
+    <>
+      <SEOStructuredData portfolioItems={portfolioItems} />
+      <div className="relative min-h-screen bg-[#0D0D0D] overflow-hidden">
+        <main className="relative z-10">
+          <HeroSection scrollY={scrollY} />
 
         <PortfolioSection 
           portfolioItems={portfolioItems}
@@ -105,9 +108,8 @@ export default function Home() {
           setSectionRef={setSectionRef}
         />
 
-      </main>
-
-    </div>
+        </main>
+      </div>
+    </>
   );
-
 }

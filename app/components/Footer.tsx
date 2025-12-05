@@ -95,7 +95,7 @@ export default function Footer({ isVisible, setSectionRef }: FooterProps) {
           }`}
         >
           <p className="text-white/40 text-xs text-center sm:text-left" style={{ fontFamily: '"Michroma", sans-serif' }}>
-            © 2024 Portfolio. All rights reserved.
+              © 2025 Moinca. All rights reserved.
           </p>
           <div className="flex items-center gap-2">
             <span className="text-white/50 text-xs" style={{ fontFamily: '"Michroma", sans-serif' }}>

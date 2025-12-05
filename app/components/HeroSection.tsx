@@ -31,7 +31,7 @@ export default function HeroSection({ scrollY }: HeroSectionProps) {
         >
           <Image
             src="/monica.jpeg"
-            alt="Monica"
+            alt="Monica - Professional Graphic Designer and Creative Artist Portfolio"
             fill
             className="object-cover object-center sm:object-right"
             priority
